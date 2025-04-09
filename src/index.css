@@ -1,0 +1,124 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 80 41% 96%;
+    --foreground: 154 38% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 154 38% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 154 38% 20%;
+
+    --primary: 154 40% 30%;
+    --primary-foreground: 80 41% 96%;
+
+    --secondary: 146 41% 62%;
+    --secondary-foreground: 154 38% 20%;
+
+    --muted: 60 55% 93%;
+    --muted-foreground: 154 14% 40%;
+
+    --accent: 28 24% 76%;
+    --accent-foreground: 154 38% 20%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 80 41% 96%;
+
+    --border: 146 30% 80%;
+    --input: 146 30% 80%;
+    --ring: 154 40% 30%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 154 40% 30%;
+    --sidebar-foreground: 80 41% 96%;
+    --sidebar-primary: 146 41% 62%;
+    --sidebar-primary-foreground: 154 38% 20%;
+    --sidebar-accent: 60 55% 93%;
+    --sidebar-accent-foreground: 154 38% 20%;
+    --sidebar-border: 146 30% 80%;
+    --sidebar-ring: 154 40% 30%;
+  }
+
+  .dark {
+    --background: 154 38% 20%;
+    --foreground: 80 41% 96%;
+
+    --card: 154 30% 25%;
+    --card-foreground: 80 41% 96%;
+
+    --popover: 154 30% 25%;
+    --popover-foreground: 80 41% 96%;
+
+    --primary: 146 41% 62%;
+    --primary-foreground: 154 38% 20%;
+
+    --secondary: 154 15% 35%;
+    --secondary-foreground: 80 41% 96%;
+
+    --muted: 154 15% 35%;
+    --muted-foreground: 146 20% 80%;
+
+    --accent: 28 20% 35%;
+    --accent-foreground: 80 41% 96%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 80 41% 96%;
+
+    --border: 154 15% 35%;
+    --input: 154 15% 35%;
+    --ring: 146 41% 62%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-opensans;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-nunito font-bold;
+  }
+}
+
+/* Custom utility classes */
+@layer components {
+  .herb-card {
+    @apply bg-white rounded-xl shadow-md p-6 transition-all duration-300 hover:shadow-lg border border-herb-light;
+  }
+  
+  .herb-gradient {
+    @apply bg-gradient-to-br from-herb-primary to-herb-secondary text-white;
+  }
+  
+  .herb-input {
+    @apply border-2 border-herb-light rounded-lg px-4 py-2 focus:outline-none focus:border-herb-secondary transition-colors;
+  }
+  
+  .herb-button {
+    @apply px-6 py-2.5 rounded-lg font-medium transition-all duration-200 transform hover:scale-[1.02] active:scale-[0.98];
+  }
+  
+  .herb-button-primary {
+    @apply herb-button bg-herb-primary text-white hover:bg-opacity-90;
+  }
+  
+  .herb-button-secondary {
+    @apply herb-button bg-herb-secondary text-herb-primary hover:bg-opacity-90;
+  }
+  
+  .herb-button-outline {
+    @apply herb-button bg-transparent border-2 border-herb-primary text-herb-primary hover:bg-herb-primary hover:text-white;
+  }
+}
